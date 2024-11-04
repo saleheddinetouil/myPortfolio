@@ -11,27 +11,25 @@ import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_CURRENT_SITE_URL as string),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_CURRENT_SITE_URL as string), // Make sure this environment variable is set
   openGraph: {
     type: "website",
     locale: "en_US",
-    title:
-      "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
+    title: "Saleh Eddine Touil | Cybersecurity Enthusiast & Web Developer",
     description:
-      "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled React/Next.js Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+      "I'm Saleh Eddine Touil, a cybersecurity enthusiast and web developer. I specialize in penetration testing, web development, and exploring various technologies like Go, Bash Scripting, and Linux.",
     images: [
       {
-        url: "/og.webp",
-        alt: "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
+        url: "/og.webp", // Replace with your actual OG image path
+        alt: "Saleh Eddine Touil | Cybersecurity Enthusiast & Web Developer",
       },
     ],
   },
-  title:
-    "Abhishek Bhardwaj | React/Next.js Developer based in Himachal Pradesh, India",
+  title: "Saleh Eddine Touil | Cybersecurity Enthusiast & Web Developer",
   description:
-    "Explore the portfolio of Abhishek Bhardwaj based in Himachal Pradesh, a skilled React/Next.js Developer. Discover expertise in ReactJS, NextJS, Redux, Material UI, and TailwindCSS showcased through innovative web development projects.",
+    "I'm Saleh Eddine Touil, a cybersecurity enthusiast and web developer. I specialize in penetration testing, web development, and exploring various technologies like Go, Bash Scripting, and Linux.",
   keywords:
-    "Abhishek Bhardwaj, ReactJS Developer, NextJS Developer, ReactJS, NextJS, Redux, Material UI, TailwindCSS, Web Development, Portfolio, React developer, Next js developer, Himachal Pradesh, India",
+    "Saleh Eddine Touil, Cybersecurity, Penetration Testing, Web Development, MERN, Python, PHP, MySQL, HTML, CSS, JavaScript, Go, Bash Scripting, Linux, Malware Analysis, Computer Forensics, Machine Learning",
   robots:
     "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   icons: {
@@ -39,6 +37,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 };
+
 
 export const revalidate = Number(process.env.REVALIDATE_INTERVAL) || 600;
 
@@ -52,11 +51,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="dark" // Or "light" depending on your preference
           enableSystem
           disableTransitionOnChange
         >
-          <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden">
+          <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden"> {/* Adjust styling as needed */}
             <Suspense fallback={<Loader />}>{children}</Suspense>
             <FloatingNav />
           </main>
